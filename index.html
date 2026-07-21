@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingrid Zanella, PhD</title>
+<meta name="description" content="Advogada, pesquisadora e professora de Direito Marítimo, Portuário e Ambiental na UFPE. Presidente da OAB-PE. Advocacia altamente especializada.">
+<meta property="og:title" content="Ingrid Zanella, PhD">
+<meta property="og:description" content="Lawyer, researcher and professor of maritime, port and environmental law at UFPE. President of OAB-PE.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/avatar.jpg">
+<meta name="image-credit" content="Imagem de capa: Tarsila do Amaral, Porto I (1953), oleo sobre tela. Acervo Banco Central do Brasil, em comodato no MASP. Reproducao pendente de autorizacao.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --text:#2d3138;
+    --muted:#6b7280;
+    --accent:#0b7285;      /* quiet ocean teal, used sparingly for links */
+    --heading:#1d3557;     /* deep ink blue for serif headings (Kamšek-style) */
+    --line:#e5e7eb;
+    --bg:#ffffff;
+    --bg-soft:#f8f9fa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--text);background:var(--bg);line-height:1.7;font-size:17px;font-weight:400;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---- language toggle: PT always loads first, EN only while toggled ---- */
+  body:not(.en) .lang-en{display:none !important}
+  body.en .lang-pt{display:none !important}
+
+  /* ---- nav ---- */
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .nav{max-width:1000px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .nav .name{font-family:'Lora',Georgia,serif;font-weight:700;font-size:1.15rem;color:var(--heading);letter-spacing:.01em}
+  .nav .name:hover{text-decoration:none;color:var(--accent)}
+  .nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+  .nav ul a{color:var(--muted);font-size:.92rem;font-weight:400}
+  .nav ul a:hover{color:var(--accent);text-decoration:none}
+  .lang-btn{
+    background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);
+    font-family:inherit;font-size:.8rem;font-weight:600;padding:4px 10px;cursor:pointer;
+  }
+  .lang-btn:hover{color:var(--accent);border-color:var(--accent)}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--text);cursor:pointer}
+
+  /* ---- banner + identity ---- */
+  /* banner: flat artistic nautical illustration (assets/banner-arte.svg), Valtorta-style:
+     sea bands, dashed shipping routes converging on a gold sonar accent (Recife), thin
+     compass rose. Scales crisply at any width; no subject framing concerns. */
+  .banner{
+    height:clamp(200px, 26vw, 460px);
+    background:linear-gradient(105deg,#dcebee 0%,#eef4f5 45%,#e8eef3 100%);
+    overflow:hidden;
+  }
+  .banner-art{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+  .foot-credit{width:100%;font-size:.78rem;opacity:.75;margin-top:2px}
+  .identity{max-width:1000px;margin:0 auto;padding:0 24px;text-align:center}
+  /* avatar: square crop of the podium photo (assets/avatar-podio.jpg).
+     Sits BELOW the banner with clear space; never overlaps it (client rule). */
+  .avatar{
+    width:172px;height:172px;border-radius:50%;object-fit:cover;object-position:center;
+    border:5px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.12);
+    margin-top:34px;background:#e6eef0;
+  }
+  .avatar-fallback{
+    width:164px;height:164px;border-radius:50%;border:5px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.12);
+    margin:34px auto 0;background:#dcebee;color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:2.6rem;font-weight:300;letter-spacing:.05em;
+  }
+  .identity h1{font-family:'Lora',Georgia,serif;font-size:2.2rem;font-weight:600;color:var(--heading);margin-top:18px;letter-spacing:-.01em}
+  .identity h1 .cred{font-weight:500;font-style:italic;font-size:1.5rem;color:var(--muted)}
+  .identity .role{color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-top:8px}
+  .identity .mailline{margin-top:10px;font-size:.95rem}
+  .identity .affil{color:var(--muted);font-size:.95rem;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:inline-block;min-width:280px}
+  .identity .affil span{display:block}
+  /* profile links: academic identity only (Lattes / e-mail); social stays down in Contact */
+  .profiles{display:flex;justify-content:center;gap:8px 26px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .profiles a{font-size:.92rem}
+  .identity-wrap{padding-bottom:26px;border-bottom:1px solid var(--line)}
+
+  /* ---- main ---- */
+  main{max-width:860px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{font-family:'Lora',Georgia,serif;font-size:1.75rem;font-weight:600;color:var(--heading);letter-spacing:-.01em;margin-bottom:26px}
+  h2 .kicker{display:block;font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .tagline{font-size:1.32rem;font-weight:300;line-height:1.5;margin-bottom:28px}
+  .prose p{margin-bottom:18px}
+  .prose b,.prose strong{font-weight:600}
+
+  /* book covers strip */
+  .covers{display:flex;gap:18px;margin:26px 0 8px;flex-wrap:wrap}
+  .covers img{height:170px;width:auto;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.16)}
+
+  /* text + photo rows (Kamšek-style alternating layout) */
+  .row{display:flex;gap:40px;align-items:center;margin:34px 0}
+  .row .txt{flex:1 1 55%}
+  .row figure{flex:0 0 38%;margin:0}
+  .row figure img{width:100%;border-radius:8px;display:block}
+  .row figcaption{font-size:.85rem;color:var(--muted);margin-top:8px;line-height:1.5}
+  .row.rev{flex-direction:row-reverse}
+
+  /* highlight callout */
+  .callout{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;
+    padding:20px 22px;margin-top:30px;font-size:.97rem;
+  }
+  .callout .ico{font-size:1.5rem;line-height:1.3}
+
+  /* plain academic lists (publications, experience, honors) */
+  .pub-sub{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:38px 0 6px}
+  .pub-list{list-style:none}
+  .pub-list li{padding:13px 0;border-bottom:1px solid var(--line);font-size:.97rem}
+  .pub-list .py{color:var(--muted);font-size:.88rem}
+  .pub-list .pt-title{font-weight:600}
+  .pub-list .pv{color:var(--muted);font-size:.92rem}
+  .see-more{margin-top:20px;font-size:.95rem}
+
+  .aw-list{list-style:none}
+  .aw-list li{display:flex;gap:18px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.96rem;align-items:baseline}
+  .aw-list .yr{color:var(--muted);font-size:.88rem;min-width:44px}
+  .aw-note{margin-top:18px;color:var(--muted);font-size:.93rem;font-style:italic}
+
+  /* law practice: compact areas as an inline ruled list, not cards */
+  .areas-inline{list-style:none;margin:20px 0 6px;columns:2;column-gap:44px}
+  .areas-inline li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.97rem;break-inside:avoid}
+  .areas-inline li b{font-weight:600}
+  .areas-inline li span.d{color:var(--muted);font-size:.9rem}
+
+  /* ---- contact ---- */
+  .contact-list{list-style:none}
+  .contact-list li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline}
+  .contact-list .lbl{min-width:110px;color:var(--muted);font-size:.88rem}
+
+  /* ---- footer ---- */
+  footer{border-top:1px solid var(--line);margin-top:20px}
+  .foot{max-width:860px;margin:0 auto;padding:28px 24px;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media(max-width:760px){
+    .nav ul{
+      position:fixed;top:60px;right:0;background:#fff;flex-direction:column;align-items:flex-start;
+      width:min(80vw,300px);padding:24px;gap:18px;border-left:1px solid var(--line);border-bottom:1px solid var(--line);
+      transform:translateX(100%);transition:transform .25s;box-shadow:-8px 8px 24px rgba(0,0,0,.06);
+    }
+    .nav ul.open{transform:none}
+    .menu-toggle{display:block}
+    .identity h1{font-size:1.65rem}
+    .identity h1 .cred{font-size:1.15rem}
+    .covers img{height:132px}
+    section{padding:48px 0}
+    .row,.row.rev{flex-direction:column}
+    .row figure{width:100%;flex-basis:auto}
+    .areas-inline{columns:1}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="name" href="#top">Ingrid Zanella</a>
+    <nav>
+      <ul id="navList">
+        <li><a href="#sobre"><span class="lang-pt">Sobre</span><span class="lang-en">About</span></a></li>
+        <li><a href="#pesquisa"><span class="lang-pt">Pesquisa</span><span class="lang-en">Research</span></a></li>
+        <li><a href="#oab"><span class="lang-pt">OAB &amp; Cidadania</span><span class="lang-en">OAB &amp; Civic life</span></a></li>
+        <li><a href="#noticias"><span class="lang-pt">Notícias</span><span class="lang-en">News</span></a></li>
+        <li><a href="#advocacia"><span class="lang-pt">Advocacia</span><span class="lang-en">Practice</span></a></li>
+        <li><a href="#contato"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a></li>
+        <li><button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="banner" id="top"><img class="banner-art" src="assets/banner-porto.jpg" alt="Porto I (1953), pintura de Tarsila do Amaral" onerror="this.remove()"></div>
+
+<div class="identity-wrap">
+  <div class="identity">
+    <img class="avatar" src="assets/avatar-podio.jpg" alt="Ingrid Zanella"
+         onerror="this.outerHTML='<div class=&quot;avatar-fallback&quot;>IZ</div>'">
+    <h1>Ingrid Zanella<span class="cred">, PhD</span></h1>
+    <div class="role"><span class="lang-pt">Advogada · Pesquisadora · Professora</span><span class="lang-en">Lawyer · Researcher · Professor</span></div>
+    <div class="mailline"><a href="mailto:ingrid@ingridzanella.com">ingrid@ingridzanella.com</a></div>
+    <div class="affil">
+      <span><span class="lang-pt">Universidade Federal de Pernambuco (UFPE)</span><span class="lang-en">Federal University of Pernambuco (UFPE)</span></span>
+      <span><span class="lang-pt">Presidente da OAB Pernambuco</span><span class="lang-en">President of the Pernambuco Bar (OAB-PE)</span></span>
+    </div>
+    <div class="profiles">
+      <a href="http://lattes.cnpq.br/4580592135492267" target="_blank" rel="noopener">Currículo Lattes</a>
+      <a href="#pesquisa"><span class="lang-pt">Publicações</span><span class="lang-en">Publications</span></a>
+      <a href="#contato"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="sobre">
+    <h2><span class="lang-pt">Sobre mim</span><span class="lang-en">About me</span></h2>
+    <p class="tagline">
+      <span class="lang-pt">Advogada, pesquisadora e professora explorando o Direito Marítimo, Portuário e Ambiental, e o que as novas tecnologias significam para o mar, os portos e as pessoas.</span>
+      <span class="lang-en">Lawyer, researcher and professor exploring maritime, port and environmental law, and what new technologies mean for the sea, ports and people.</span>
+    </p>
+    <div class="row rev">
+      <div class="txt prose">
+      <p class="lang-pt">Ingrid Zanella é advogada, professora da <strong>Universidade Federal de Pernambuco (UFPE)</strong> e a <strong>primeira mulher a presidir a OAB Pernambuco</strong> em 92 anos de história da Seccional. <strong>Mestre e doutora em Direito</strong> pela UFPE, com tese sobre o turismo de cruzeiros marítimos em Fernando de Noronha, especializou-se em <strong>Law of Marine Insurance</strong> e <strong>Liability for Maritime Claims</strong> pelo International Maritime Law Institute (<strong>IMLI/IMO</strong>), em Malta.</p>
+      <p class="lang-pt">Foi <strong>juíza do Tribunal Marítimo</strong> (2021-2024), nomeada por decreto presidencial, é <strong>árbitra do Centro Brasileiro de Arbitragem Marítima</strong> e preside a Comissão Nacional de Direito Marítimo e Portuário do Conselho Federal da OAB. À frente do escritório <strong>Ingrid Zanella Advocacia Estratégica</strong>, atua em navegação, portos e meio ambiente, e escreve com regularidade na imprensa especializada, em veículos como <strong>Estadão, JOTA, Conjur e Migalhas</strong>.</p>
+      <p class="lang-en">Ingrid Zanella is a lawyer, a professor at the <strong>Federal University of Pernambuco (UFPE)</strong> and the <strong>first woman to preside over the Pernambuco Bar (OAB-PE)</strong> in the chapter's 92-year history. Holder of a <strong>master's and a doctorate in Law</strong> from UFPE, with a thesis on maritime cruise tourism in Fernando de Noronha, she specialized in the <strong>Law of Marine Insurance</strong> and <strong>Liability for Maritime Claims</strong> at the International Maritime Law Institute (<strong>IMLI/IMO</strong>) in Malta.</p>
+      <p class="lang-en">A former <strong>judge of the Brazilian Maritime Court</strong> (2021-2024), appointed by presidential decree, she is an <strong>arbitrator at the Brazilian Maritime Arbitration Center</strong> and chairs the National Maritime and Port Law Commission of the Brazilian Bar Federal Council. At the helm of <strong>Ingrid Zanella Advocacia Estratégica</strong>, she works on shipping, port and environmental matters, and writes regularly for Brazil's specialized legal press, in outlets such as <strong>Estadão, JOTA, Conjur and Migalhas</strong>.</p>
+      </div>
+      <figure>
+        <img src="assets/sobre.jpg" alt="Ingrid Zanella" loading="lazy">
+        <figcaption><span class="lang-pt">Foto: Andrea Rego Barros.</span><span class="lang-en">Photo: Andrea Rego Barros.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ ACADEMIC WORK (priority 1) ============ -->
+  <section id="pesquisa">
+    <h2><span class="kicker"><span class="lang-pt">Trabalho acadêmico</span><span class="lang-en">Academic work</span></span>
+        <span class="lang-pt">Pesquisa &amp; docência</span><span class="lang-en">Research &amp; teaching</span></h2>
+
+    <div class="row">
+      <div class="txt prose">
+        <p class="lang-pt">Sua pesquisa concentra-se no <strong>Direito Marítimo, Portuário e Ambiental</strong>: navegação comercial, acidentes da navegação, seguro marítimo, regulação portuária e proteção do meio ambiente marinho. Mais recentemente, investiga a <strong>segurança cibernética no cenário marítimo</strong>, os <strong>navios autônomos</strong> e a <strong>proteção de dados</strong> no transporte.</p>
+        <p class="lang-pt">A pesquisa se apoia em vivência técnica: Ingrid é <strong>auditora ambiental líder</strong> de portos, plataformas e refinarias e <strong>perita ambiental judicial</strong>.</p>
+        <p class="lang-en">Her research focuses on <strong>maritime, port and environmental law</strong>: commercial shipping, marine casualties, marine insurance, port regulation and protection of the marine environment. More recently, she investigates <strong>maritime cybersecurity</strong>, <strong>autonomous ships</strong> and <strong>data protection</strong> in transport.</p>
+        <p class="lang-en">The research is grounded in technical practice: Ingrid is a <strong>lead environmental auditor</strong> of ports, platforms and refineries and a <strong>court-appointed environmental expert</strong>.</p>
+        <p class="lang-pt">Na docência, leciona <strong>Direito Civil</strong> e <strong>Direito Marítimo</strong> na UFPE e foi professora convidada da <strong>Faculdade de Direito da Universidade de Coimbra</strong>, onde ministrou responsabilidade civil por riscos cibernéticos em curso avançado. Ensina ainda em programas de pós-graduação por todo o Brasil e orienta dissertações de mestrado.</p>
+        <p class="lang-en">In teaching, she lectures in <strong>Civil Law</strong> and <strong>Maritime Law</strong> at UFPE and was an invited professor at the <strong>University of Coimbra Faculty of Law</strong>, teaching civil liability for cyber risks in an advanced course. She also teaches in graduate programs across Brazil and supervises master's dissertations.</p>
+      </div>
+      <figure>
+        <img src="assets/navio.jpg" alt="Ingrid Zanella a bordo de navio, em auditoria" loading="lazy">
+        <figcaption><span class="lang-pt">Experiência de campo: em inspeção a bordo.</span><span class="lang-en">Field experience: on a shipboard inspection.</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="pub-sub"><span class="lang-pt">Livros</span><span class="lang-en">Books</span></div>
+    <div class="covers">
+      <img src="assets/capa-temas.png" alt="Capa: Direito Marítimo e Portuário, temas controversos e aspectos polêmicos" loading="lazy">
+      <img src="assets/capa-curso.png" alt="Capa: Curso de Direito Marítimo Sistematizado" loading="lazy">
+      <img src="assets/capa-constitucional.png" alt="Capa: Direito Constitucional Marítimo" loading="lazy">
+    </div>
+    <ul class="pub-list">
+      <li><span class="pt-title"><span class="lang-pt">Modernização da Advocacia e do Direito Empresarial</span><span class="lang-en">Modernization of Advocacy and Business Law</span></span><br><span class="pv">Nossa Livraria, 2025 · 341 p.</span></li>
+      <li><span class="pt-title"><a href="https://www.amazon.com.br/dp/6526310788" target="_blank" rel="noopener"><span class="lang-pt">Direito Marítimo e Portuário: temas controversos e aspectos polêmicos</span><span class="lang-en">Maritime and Port Law: controversial themes and polemic aspects</span></a></span><br><span class="pv">Juruá, 2024 · 280 p.</span></li>
+      <li><span class="pt-title"><span class="lang-pt">Direito Marítimo, Portuário e Aduaneiro</span><span class="lang-en">Maritime, Port and Customs Law</span></span><br><span class="pv">MLAW, 2021 · 302 p.</span></li>
+      <li><span class="pt-title"><span class="lang-pt">Direito Marítimo, Portuário e Aduaneiro: Temas Contemporâneos</span><span class="lang-en">Maritime, Port and Customs Law: Contemporary Themes</span></span><br><span class="pv">Arraes, 2020 · 250 p.</span></li>
+      <li><span class="pt-title"><a href="https://www.amazon.com.br/dp/8536268506" target="_blank" rel="noopener"><span class="lang-pt">Curso de Direito Marítimo Sistematizado: Direito Material e Processual</span><span class="lang-en">Systematized Course on Maritime Law: Substantive and Procedural</span></a></span><br><span class="pv">Juruá, 2017 · 394 p.</span></li>
+      <li><span class="pt-title"><a href="https://www.amazon.com.br/dp/8536233834" target="_blank" rel="noopener"><span class="lang-pt">Direito Constitucional Marítimo</span><span class="lang-en">Maritime Constitutional Law</span></a></span><br><span class="pv">Juruá, 2011 · 194 p.</span></li>
+    </ul>
+
+    <div class="pub-sub"><span class="lang-pt">Coordenação de obras coletivas</span><span class="lang-en">Edited volumes</span></div>
+    <ul class="pub-list">
+      <li><span class="pt-title"><span class="lang-pt">Direitos da Personalidade em Debate</span><span class="lang-en">Personality Rights in Debate</span></span><br><span class="pv">Nossa Livraria, 2023</span></li>
+      <li><span class="pt-title"><span class="lang-pt">Temas de Direito Civil, Parte Geral (Tomos I e II)</span><span class="lang-en">Themes of Civil Law, General Part (Volumes I and II)</span></span><br><span class="pv">Nossa Livraria, 2016</span></li>
+      <li><span class="pt-title"><span class="lang-pt">Aspectos Modernos do Direito Marítimo e Portuário</span><span class="lang-en">Modern Aspects of Maritime and Port Law</span></span><br><span class="pv">Nossa Livraria, 2015</span></li>
+    </ul>
+
+    <div class="pub-sub"><span class="lang-pt">Artigos selecionados</span><span class="lang-en">Selected articles</span></div>
+    <ul class="pub-list">
+      <li><span class="py">2025 ·</span> <span class="lang-pt">Violência de gênero e processo estrutural: convergências e desafios institucionais.</span><span class="lang-en">Gender violence and structural litigation: convergences and institutional challenges.</span> <span class="pv">Revista Jurídica da Corregedoria Nacional do Ministério Público</span></li>
+      <li><span class="py">2025 ·</span> <span class="lang-pt">A advocacia no direito marítimo: segurança cibernética, navios autônomos e proteção de dados.</span><span class="lang-en">Legal practice in maritime law: cybersecurity, autonomous ships and data protection.</span> <span class="pv"><span class="lang-pt">Capítulo em Transporte Aquaviário e o Brasil (D'Plácido)</span><span class="lang-en">Chapter in Transporte Aquaviário e o Brasil (D'Plácido)</span></span></li>
+      <li><span class="py">2024 ·</span> <span class="lang-pt">A relevância da tutela pré-arbitral no Direito Marítimo.</span><span class="lang-en">The relevance of pre-arbitral relief in Maritime Law.</span> <span class="pv">Revista Direito Aduaneiro, Marítimo e Portuário</span></li>
+      <li><span class="py">2023 ·</span> <span class="lang-pt">A personalidade judiciária do navio e a responsabilidade civil dos navios autônomos.</span><span class="lang-en">The ship's legal personality and the civil liability of autonomous ships.</span> <span class="pv">Boletim da Sociedade Brasileira de Direito Internacional</span></li>
+      <li><span class="py">2023 ·</span> <span class="lang-pt">Principais impactos da Reforma Tributária nos setores marítimo e portuário.</span><span class="lang-en">Main impacts of the Tax Reform on the maritime and port sectors.</span> <span class="pv">Revista Direito Aduaneiro, Marítimo e Portuário</span></li>
+      <li><span class="py">2021 ·</span> <span class="lang-pt">A segurança cibernética no Direito Marítimo.</span><span class="lang-en">Cybersecurity in Maritime Law.</span> <span class="pv">Cadernos do PPGDir (UFRGS)</span></li>
+      <li><span class="py">2016 ·</span> <span class="lang-pt">Comentários aos artigos 707 a 711 e 766 a 770 do CPC (regulação da avaria grossa; protestos marítimos).</span><span class="lang-en">Commentary on articles 707 to 711 and 766 to 770 of the Civil Procedure Code (general average adjustment; sea protests).</span> <span class="pv"><span class="lang-pt">Em Comentários ao Código de Processo Civil, org. Streck, Cunha e Freire (Saraiva)</span><span class="lang-en">In Comentários ao Código de Processo Civil, ed. Streck, Cunha and Freire (Saraiva)</span></span></li>
+    </ul>
+
+    <p class="see-more">
+      <span class="lang-pt">Mais de 57 artigos e 41 capítulos de livros: produção completa no </span>
+      <span class="lang-en">Over 57 articles and 41 book chapters: full record on the </span>
+      <a href="http://lattes.cnpq.br/4580592135492267" target="_blank" rel="noopener">Currículo Lattes →</a>
+    </p>
+
+    <div class="pub-sub"><span class="lang-pt">Formação</span><span class="lang-en">Education</span></div>
+    <ul class="aw-list">
+      <li><span class="yr">2016</span><span><span class="lang-pt">Law of Marine Insurance (180h) e Liability for Maritime Claims (120h), International Maritime Law Institute (IMLI/IMO), Malta</span><span class="lang-en">Law of Marine Insurance (180h) and Liability for Maritime Claims (120h), International Maritime Law Institute (IMLI/IMO), Malta</span></span></li>
+      <li><span class="yr">2013</span><span><span class="lang-pt">Doutorado em Direito, UFPE. Tese sobre a conformidade do turismo de cruzeiro marítimo em Fernando de Noronha à luz dos mandamentos constitucionais ambientais de competência e sustentabilidade</span><span class="lang-en">PhD in Law, UFPE. Thesis on the conformity of maritime cruise tourism in Fernando de Noronha with constitutional environmental mandates of authority and sustainability</span></span></li>
+      <li><span class="yr">2011</span><span><span class="lang-pt">Mestrado em Direito, UFPE, com bolsa CAPES. Dissertação sobre o acesso à justiça por intermédio do Tribunal Marítimo</span><span class="lang-en">Master's in Law, UFPE, on a CAPES scholarship. Thesis on access to justice through the Maritime Court</span></span></li>
+      <li><span class="yr">2008</span><span><span class="lang-pt">Graduação em Direito, Faculdades Integradas Barros Melo (FIBAM), Olinda</span><span class="lang-en">Bachelor of Laws, Faculdades Integradas Barros Melo (FIBAM), Olinda</span></span></li>
+      <li><span class="yr">&nbsp;</span><span><span class="lang-pt">Formação complementar: Auditora Líder CONAMA 306 (Exemplar Global, 2014) · ISO 14001 (BSI, 2013) · Perícia Judicial Ambiental (2013) · Chartering (BIMCO, 2019) · Segurança Náutica STCW (2010)</span><span class="lang-en">Further training: CONAMA 306 Lead Auditor (Exemplar Global, 2014) · ISO 14001 (BSI, 2013) · Judicial Environmental Expert (2013) · Chartering (BIMCO, 2019) · STCW Nautical Safety (2010)</span></span></li>
+    </ul>
+
+    <div class="pub-sub"><span class="lang-pt">Atuação acadêmica e institucional</span><span class="lang-en">Academic and institutional roles</span></div>
+    <ul class="aw-list">
+      <li><span class="yr">2023</span><span><span class="lang-pt">Vice-Coordenadora de Extensão e Cultura do Centro de Ciências Jurídicas da UFPE</span><span class="lang-en">Deputy Coordinator of Extension and Culture, UFPE Legal Sciences Center</span></span></li>
+      <li><span class="yr">2019</span><span><span class="lang-pt">Corpo editorial da Revista de Direito Aduaneiro, Marítimo e Portuário; conselho da Revista Jurídica da Presidência</span><span class="lang-en">Editorial board of the Revista de Direito Aduaneiro, Marítimo e Portuário; board of the Revista Jurídica da Presidência</span></span></li>
+      <li><span class="yr">2019</span><span><span class="lang-pt">Coordenadora de projeto de pesquisa da UFPE sobre o Direito Marítimo e Comercial em face dos princípios constitucionais do direito privado</span><span class="lang-en">Coordinator of a UFPE research project on maritime and commercial law under the constitutional principles of private law</span></span></li>
+      <li><span class="yr">2024</span><span><span class="lang-pt">Comissões examinadoras de concursos públicos do TJPE: delegações de notas e registros (2024) e juiz substituto (2019)</span><span class="lang-en">Examining boards of Pernambuco Court of Justice public competitions: notary delegations (2024) and substitute judges (2019)</span></span></li>
+      <li><span class="yr">2020</span><span><span class="lang-pt">Organização do XXI International Congress of Maritime Arbitrators (ICMA), com a FGV Direito Rio</span><span class="lang-en">Organizer of the XXI International Congress of Maritime Arbitrators (ICMA), with FGV Direito Rio</span></span></li>
+      <li><span class="yr">2017</span><span><span class="lang-pt">Coordenadora dos seminários semestrais de Direito Marítimo e Portuário da UFPE</span><span class="lang-en">Coordinator of UFPE's biannual seminars on maritime and port law</span></span></li>
+      <li><span class="yr">&nbsp;</span><span><span class="lang-pt">Orientadora de mestrado na Faculdade Damas: mais de uma dezena de dissertações concluídas, além de dezenas de monografias e TCCs</span><span class="lang-en">Master's supervisor at Faculdade Damas: over a dozen completed dissertations, plus dozens of monographs and theses</span></span></li>
+      <li><span class="yr">&nbsp;</span><span><span class="lang-pt">Idiomas de trabalho: português, inglês e italiano</span><span class="lang-en">Working languages: Portuguese, English and Italian</span></span></li>
+    </ul>
+  </section>
+
+  <!-- ============ OAB & CIVIC LIFE (priority 2) ============ -->
+  <section id="oab">
+    <h2><span class="kicker"><span class="lang-pt">Vida institucional</span><span class="lang-en">Institutional life</span></span>
+        <span class="lang-pt">OAB &amp; presença cívica</span><span class="lang-en">OAB &amp; civic presence</span></h2>
+
+    <div class="row rev">
+      <div class="txt prose">
+        <p class="lang-pt">Ingrid preside a <strong>OAB Pernambuco</strong> e a Comissão Nacional de Direito Marítimo e Portuário do <strong>Conselho Federal da OAB</strong>. Entre 2021 e 2024, foi <strong>juíza suplente do Tribunal Marítimo</strong>, na vaga de especialista em Direito Marítimo, nomeada por decreto presidencial. Atua também como <strong>árbitra do Centro Brasileiro de Arbitragem Marítima</strong> e assessora, em comitês técnicos, o <strong>Senado Federal</strong> e a <strong>Câmara dos Deputados</strong>.</p>
+        <p class="lang-pt">É <strong>Oficial da Ordem do Mérito Naval</strong> da Marinha do Brasil, membro fundadora da <strong>WISTA Brasil</strong>, associação internacional de mulheres do setor marítimo e de comércio, membro titular do <strong>Instituto Ibero-Americano de Direito Marítimo</strong> e associada da <strong>ABDM</strong>.</p>
+        <p class="lang-en">Ingrid presides over the <strong>Pernambuco Bar (OAB-PE)</strong> and chairs the National Maritime and Port Law Commission of the <strong>Brazilian Bar Federal Council</strong>. From 2021 to 2024 she served as a <strong>deputy judge of the Brazilian Maritime Court</strong>, in the seat reserved for maritime law specialists, appointed by presidential decree. She also acts as an <strong>arbitrator at the Brazilian Maritime Arbitration Center</strong> and advises the <strong>Federal Senate</strong> and the <strong>Chamber of Deputies</strong> on technical committees.</p>
+        <p class="lang-en">She is an <strong>Officer of the Order of Naval Merit</strong> of the Brazilian Navy, a founding member of <strong>WISTA Brazil</strong>, the international association of women in shipping and trade, a full member of the <strong>Ibero-American Institute of Maritime Law</strong> and a member of the <strong>Brazilian Maritime Law Association</strong>.</p>
+      </div>
+      <figure>
+        <img src="assets/retrato-oficial.jpg" alt="Retrato oficial de Ingrid Zanella" loading="lazy">
+        <figcaption><span class="lang-pt">Presidente da OAB Pernambuco no triênio 2025-2027.</span><span class="lang-en">President of the Pernambuco Bar for the 2025-2027 term.</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <span class="ico">🏛️</span>
+      <span>
+        <span class="lang-pt">Eleita em 18 de novembro de 2024, tornou-se a <strong>primeira mulher a presidir a OAB Pernambuco</strong> em 92 anos de história da Seccional. Preside a entidade no triênio 2025-2027.</span>
+        <span class="lang-en">Elected on November 18, 2024, she became the <strong>first woman to preside over the Pernambuco Bar (OAB-PE)</strong> in the chapter's 92-year history. She leads the institution for the 2025-2027 term.</span>
+      </span>
+    </div>
+
+    <div class="pub-sub"><span class="lang-pt">Honrarias</span><span class="lang-en">Honors</span></div>
+    <ul class="aw-list">
+      <li><span class="yr">2026</span><span><span class="lang-pt">Medalha Bernardette Pedrosa · Academia Pernambucana de Letras Jurídicas</span><span class="lang-en">Bernardette Pedrosa Medal · Pernambuco Academy of Legal Letters</span></span></li>
+      <li><span class="yr">2025</span><span><span class="lang-pt">Bravas Pernambucanas · Tribunal de Justiça de Pernambuco</span><span class="lang-en">Bravas Pernambucanas · Pernambuco Court of Justice</span></span></li>
+      <li><span class="yr">2025</span><span><span class="lang-pt">Mérito Judiciário Des. Joaquim Nunes Machado · TJPE</span><span class="lang-en">Judicial Merit Award · Pernambuco Court of Justice</span></span></li>
+      <li><span class="yr">2022</span><span><span class="lang-pt">Medalha do Mérito Eleitoral Frei Caneca, classe Comendador · TRE-PE</span><span class="lang-en">Frei Caneca Electoral Merit Medal, Commander class · TRE-PE</span></span></li>
+      <li><span class="yr">2021</span><span><span class="lang-pt">Heroínas de Tejucupapo · OAB-PE</span><span class="lang-en">Heroines of Tejucupapo · OAB-PE</span></span></li>
+      <li><span class="yr">2025</span><span><span class="lang-pt">Membro honorário · Força Aérea Brasileira</span><span class="lang-en">Honorary member · Brazilian Air Force</span></span></li>
+      <li><span class="yr">2020</span><span><span class="lang-pt">Título Amigo da Marinha · Marinha do Brasil</span><span class="lang-en">Friend of the Navy title · Brazilian Navy</span></span></li>
+      <li><span class="yr">2014</span><span><span class="lang-pt">Oficial da Ordem do Mérito Naval · Marinha do Brasil</span><span class="lang-en">Officer of the Order of Naval Merit · Brazilian Navy</span></span></li>
+    </ul>
+    <p class="aw-note"><span class="lang-pt">Além de títulos de cidadã honorária concedidos por doze municípios pernambucanos, de Olinda e Caruaru a Petrolina, e de dezenas de outras homenagens.</span><span class="lang-en">Plus honorary citizenship titles granted by twelve municipalities of Pernambuco, from Olinda and Caruaru to Petrolina, and dozens of other tributes.</span></p>
+  </section>
+
+  <!-- ============ NEWS / MEDIA (prototype of the WordPress feed; items from research/news-feed.json) ============ -->
+  <section id="noticias">
+    <h2><span class="kicker"><span class="lang-pt">Na mídia</span><span class="lang-en">In the news</span></span>
+        <span class="lang-pt">Notícias</span><span class="lang-en">News</span></h2>
+    <ul class="pub-list">
+      <li><span class="py">jul 2026 ·</span> <a href="https://www.encontrarecife.com.br/sobre/medalha-de-merito-olegaria-mariano-e-entregue-a-ingrid-zanella/" target="_blank" rel="noopener">Medalha de Mérito Olegária Mariano é entregue a Ingrid Zanella</a> <span class="pv">Encontra Recife</span></li>
+      <li><span class="py">jul 2026 ·</span> <a href="https://www.oabpe.org.br/noticias/oab-pe-promove-audiencia-sobre-o-fim-da-escala-de-trabalho-6x1" target="_blank" rel="noopener">OAB-PE promove audiência sobre o fim da escala de trabalho 6x1</a> <span class="pv">OAB-PE</span></li>
+      <li><span class="py">jul 2026 ·</span> <a href="https://www.oabpe.org.br/noticias/presidente-ingrid-zanella-e-membros-da-oab-pe-recebem-votos-de-aplausos" target="_blank" rel="noopener">Presidente Ingrid Zanella e membros da OAB-PE recebem Votos de Aplausos</a> <span class="pv">OAB-PE · Câmara do Recife</span></li>
+      <li><span class="py">2026 ·</span> <a href="https://www.oabpe.org.br/noticias/sao-paulo-presidente-ingrid-zanella-participa-do-enja-2026" target="_blank" rel="noopener">Em São Paulo, presidente Ingrid Zanella participa do ENJA 2026</a> <span class="pv">OAB-PE</span></li>
+      <li><span class="py">mai 2026 ·</span> <a href="https://www.taisparanhos.com.br/2026/05/jubileu-de-ouro-celebra-legado-da.html" target="_blank" rel="noopener">Jubileu de Ouro da APLJ entrega a Medalha Bernardette Pedrosa</a> <span class="pv">Taís Paranhos</span></li>
+      <li><span class="py">nov 2025 ·</span> <a href="https://jamildo.com/politica/ingrid-zanella-faz-balanco-do-primeiro-ano-a-frente-da-oab-pe-e-projeta-desafios-para-2026.html" target="_blank" rel="noopener">Ingrid Zanella faz balanço do primeiro ano à frente da OAB-PE</a> <span class="pv">PodJá · Jamildo</span></li>
+    </ul>
+    <p class="see-more">
+      <span class="lang-pt">Cobertura completa no </span>
+      <span class="lang-en">Full coverage on the </span>
+      <a href="https://www.oabpe.org.br/noticias" target="_blank" rel="noopener">portal OAB-PE →</a>
+    </p>
+  </section>
+
+  <!-- ============ LAW PRACTICE (priority 3) ============ -->
+  <section id="advocacia">
+    <h2><span class="kicker"><span class="lang-pt">Contencioso &amp; consultoria</span><span class="lang-en">Litigation &amp; advisory</span></span>
+        <span class="lang-pt">Ingrid Zanella Advocacia Estratégica</span><span class="lang-en">Ingrid Zanella Advocacia Estratégica</span></h2>
+
+    <div class="row">
+      <div class="txt prose">
+        <p class="lang-pt"><strong>Ingrid Zanella Advocacia Estratégica</strong> é um escritório com atuação especializada em Direito <strong>Marítimo, Portuário, Administrativo, Regulatório, Ambiental e Aduaneiro</strong>, com soluções jurídicas inovadoras, criativas e personalizadas.</p>
+        <p class="lang-pt">Inserido nas discussões relevantes sobre <strong>infraestrutura no Brasil</strong>, o escritório desenvolve soluções completas para projetos, apoia a resolução de conflitos e conecta agentes públicos e privados, com a <strong>condução direta de Ingrid</strong> em cada caso.</p>
+        <p class="lang-en"><strong>Ingrid Zanella Advocacia Estratégica</strong> is a law firm specialized in <strong>maritime, port, administrative, regulatory, environmental and customs law</strong>, with innovative, creative and tailored legal solutions.</p>
+        <p class="lang-en">Engaged in Brazil's relevant <strong>infrastructure</strong> debates, the firm develops complete solutions for projects, supports dispute resolution and connects public and private players, with <strong>Ingrid's direct conduction</strong> of every case.</p>
+      </div>
+      <figure>
+        <img src="assets/sustentacao.jpg" alt="Ingrid Zanella de beca, no tribunal" loading="lazy">
+        <figcaption><span class="lang-pt">No Tribunal: cada caso, conduzido pessoalmente.</span><span class="lang-en">In court: every case, handled personally.</span></figcaption>
+      </figure>
+    </div>
+
+    <ul class="areas-inline">
+      <li><b><span class="lang-pt">Direito Marítimo</span><span class="lang-en">Maritime Law</span></b><br><span class="d"><span class="lang-pt">contratos e transporte internacional (INCOTERMS), cargo claim, demurrage, avaria, limitação de responsabilidade, acidentes da navegação e Tribunal Marítimo</span><span class="lang-en">contracts and international carriage (INCOTERMS), cargo claims, demurrage, average, limitation of liability, marine casualties and the Maritime Court</span></span></li>
+      <li><b><span class="lang-pt">Direito Portuário</span><span class="lang-en">Port Law</span></b><br><span class="d"><span class="lang-pt">infraestrutura e regulação, licitações, contratos portuários, reequilíbrio econômico-financeiro, EVTEA e taxas portuárias</span><span class="lang-en">infrastructure and regulation, public tenders, port contracts, economic-financial rebalancing, feasibility studies and port fees</span></span></li>
+      <li><b><span class="lang-pt">Direito Ambiental</span><span class="lang-en">Environmental Law</span></b><br><span class="d"><span class="lang-pt">licenciamento, auditoria ambiental (CONAMA 306), sinistros com danos ambientais, contencioso estratégico e análise de riscos</span><span class="lang-en">licensing, environmental auditing (CONAMA 306), environmental casualties, strategic litigation and risk analysis</span></span></li>
+      <li><b><span class="lang-pt">Direito Aduaneiro e Comércio Exterior</span><span class="lang-en">Customs &amp; Foreign Trade Law</span></b><br><span class="d"><span class="lang-pt">regimes aduaneiros, licenças de importação, AFRMM, OEA e contencioso</span><span class="lang-en">customs regimes, import licensing, AFRMM, AEO and litigation</span></span></li>
+      <li><b><span class="lang-pt">Direito Administrativo e Regulatório</span><span class="lang-en">Administrative &amp; Regulatory Law</span></b><br><span class="d"><span class="lang-pt">processos administrativos, licitações e contratos, benefícios fiscais, REPORTO e REIDI</span><span class="lang-en">administrative proceedings, tenders and contracts, tax incentives, REPORTO and REIDI</span></span></li>
+      <li><b><span class="lang-pt">Contencioso Cível Estratégico</span><span class="lang-en">Strategic Civil Litigation</span></b><br><span class="d"><span class="lang-pt">responsabilidade civil, arbitragens, negociações, mediações e estratégias processuais</span><span class="lang-en">civil liability, arbitration, negotiation, mediation and procedural strategy</span></span></li>
+      <li><b><span class="lang-pt">Relações Institucionais</span><span class="lang-en">Institutional Relations</span></b><br><span class="d"><span class="lang-pt">propostas normativas, revisão de projetos de lei, audiências públicas e interlocução entre agentes públicos e privados</span><span class="lang-en">normative proposals, bill review, public hearings and dialogue between public and private players</span></span></li>
+    </ul>
+
+    <p class="see-more">
+      <span class="lang-pt">Para consultas, pareceres ou representação, </span>
+      <span class="lang-en">For inquiries, legal opinions or representation, </span>
+      <a href="#contato"><span class="lang-pt">entre em contato →</span><span class="lang-en">get in touch →</span></a>
+    </p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contato">
+    <h2><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></h2>
+    <ul class="contact-list">
+      <li><span class="lbl">E-mail</span><a href="mailto:ingrid@ingridzanella.com">ingrid@ingridzanella.com</a></li>
+      <li><span class="lbl"><span class="lang-pt">Acadêmico</span><span class="lang-en">Academic</span></span><a href="mailto:ingrid.zanella@ufpe.br">ingrid.zanella@ufpe.br</a></li>
+      <li><span class="lbl">Lattes</span><a href="http://lattes.cnpq.br/4580592135492267" target="_blank" rel="noopener">lattes.cnpq.br/4580592135492267</a></li>
+      <li><span class="lbl"><span class="lang-pt">Escritório</span><span class="lang-en">Office</span></span><span>Av. Rui Barbosa, 715, sala 408 · Empresarial Rui Barbosa · Graças, Recife-PE · 52011-010</span></li>
+      <li><span class="lbl">Instagram</span><a href="https://www.instagram.com/zanellaingrid/" target="_blank" rel="noopener">@zanellaingrid</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© <span id="yr"></span> Ingrid Zanella Andrade Campos</span>
+    <span>Recife · PE · <span class="lang-pt">Brasil</span><span class="lang-en">Brazil</span></span>
+    <span class="foot-credit"><span class="lang-pt">Imagem de capa: Tarsila do Amaral, Porto I (1953). Acervo Banco Central do Brasil, em comodato no MASP.</span><span class="lang-en">Cover image: Tarsila do Amaral, Porto I (1953). Banco Central do Brasil collection, on deposit at MASP.</span></span>
+  </div>
+</footer>
+
+<script>
+  // Language: page ALWAYS loads in Portuguese; English only while the toggle is pressed.
+  const btn=document.getElementById('langBtn');
+  function setLang(en){
+    document.body.classList.toggle('en',en);
+    document.documentElement.lang=en?'en':'pt-BR';
+    btn.textContent=en?'PT':'EN';
+  }
+  btn.addEventListener('click',()=>setLang(!document.body.classList.contains('en')));
+
+  const menuBtn=document.getElementById('menuBtn'),navList=document.getElementById('navList');
+  menuBtn.addEventListener('click',()=>navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navList.classList.remove('open')));
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

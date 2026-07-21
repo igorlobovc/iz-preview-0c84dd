@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7fbfc"/>
+      <stop offset="0.55" stop-color="#eaf3f5"/>
+      <stop offset="1" stop-color="#dcebee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#c9a227" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="2400" height="760" fill="url(#sky)"/>
+
+  <!-- faint graticule -->
+  <g stroke="#1d3557" stroke-width="1" opacity="0.045">
+    <path d="M300 0V760M600 0V760M900 0V760M1200 0V760M1500 0V760M1800 0V760M2100 0V760"/>
+    <path d="M0 190H2400M0 380H2400M0 570H2400"/>
+  </g>
+
+  <!-- depth contours -->
+  <g fill="none" stroke="#0b7285" stroke-width="1.4">
+    <path opacity="0.14" d="M-40 430 C 300 390, 620 470, 980 430 S 1700 370, 2050 430 S 2350 470, 2440 440"/>
+    <path opacity="0.11" d="M-40 490 C 340 450, 700 530, 1060 490 S 1760 430, 2110 490 S 2380 520, 2440 500"/>
+    <path opacity="0.08" d="M-40 550 C 380 510, 780 590, 1140 550 S 1820 490, 2170 550 S 2400 580, 2440 560"/>
+  </g>
+
+  <!-- layered sea bands -->
+  <path d="M0 760 L0 600 C 400 560, 800 640, 1200 606 S 2000 540, 2400 596 L2400 760 Z" fill="#0b7285" opacity="0.07"/>
+  <path d="M0 760 L0 660 C 460 620, 860 700, 1280 666 S 2040 610, 2400 656 L2400 760 Z" fill="#0b7285" opacity="0.11"/>
+  <path d="M0 760 L0 716 C 520 684, 940 748, 1360 720 S 2080 676, 2400 712 L2400 760 Z" fill="#1d3557" opacity="0.13"/>
+
+  <!-- shipping route arcs -->
+  <g fill="none">
+    <path id="r1" d="M-60 300 C 480 170, 1150 210, 1642 384" stroke="#1d3557" stroke-width="2.2" opacity="0.42" stroke-dasharray="3 12" stroke-linecap="round"/>
+    <path id="r2" d="M2460 130 C 2040 220, 1810 300, 1648 380" stroke="#0b7285" stroke-width="2.2" opacity="0.48" stroke-dasharray="3 12" stroke-linecap="round"/>
+    <path id="r3" d="M-60 560 C 520 520, 1120 470, 1638 392" stroke="#0b7285" stroke-width="2.2" opacity="0.38" stroke-dasharray="3 12" stroke-linecap="round"/>
+    <path id="r4" d="M2460 620 C 2100 560, 1850 470, 1652 396" stroke="#1d3557" stroke-width="2.2" opacity="0.32" stroke-dasharray="3 12" stroke-linecap="round"/>
+  </g>
+
+  <!-- vessels in motion along the routes -->
+  <g>
+    <circle r="6.5" fill="#1d3557" opacity="0.6">
+      <animateMotion dur="75s" begin="-20s" repeatCount="indefinite" rotate="none"><mpath href="#r1"/></animateMotion>
+    </circle>
+    <circle r="6.5" fill="#0b7285" opacity="0.65">
+      <animateMotion dur="90s" begin="-55s" repeatCount="indefinite" rotate="none"><mpath href="#r2"/></animateMotion>
+    </circle>
+    <circle r="6.5" fill="#0b7285" opacity="0.55">
+      <animateMotion dur="100s" begin="-35s" repeatCount="indefinite" rotate="none"><mpath href="#r3"/></animateMotion>
+    </circle>
+    <circle r="6.5" fill="#1d3557" opacity="0.5">
+      <animateMotion dur="85s" begin="-70s" repeatCount="indefinite" rotate="none"><mpath href="#r4"/></animateMotion>
+    </circle>
+  </g>
+
+  <!-- vessels along routes -->
+  <g fill="#1d3557">
+    <circle cx="420" cy="243" r="6" opacity="0.5"/>
+    <circle cx="980" cy="205" r="6" opacity="0.55"/>
+    <circle cx="1350" cy="272" r="6" opacity="0.5"/>
+    <circle cx="2130" cy="196" r="6" fill="#0b7285" opacity="0.6"/>
+    <circle cx="1880" cy="290" r="6" fill="#0b7285" opacity="0.55"/>
+    <circle cx="600" cy="527" r="6" fill="#0b7285" opacity="0.5"/>
+    <circle cx="1180" cy="466" r="6" opacity="0.45"/>
+    <circle cx="2020" cy="540" r="6" opacity="0.45"/>
+  </g>
+
+  <!-- abstract coastline through the convergence point -->
+  <path d="M1560 60 C 1610 150, 1596 240, 1630 320 C 1652 368, 1650 402, 1636 452 C 1616 520, 1636 610, 1600 700"
+        fill="none" stroke="#1d3557" stroke-width="2" opacity="0.30"/>
+
+  <!-- Recife: gold sonar accent at the route convergence -->
+  <circle cx="1645" cy="388" r="120" fill="url(#glow)"/>
+  <g fill="none" stroke="#c9a227">
+    <circle cx="1645" cy="388" r="26" stroke-width="1.6" opacity="0.55"/>
+    <circle cx="1645" cy="388" r="46" stroke-width="1.2" opacity="0.32"/>
+    <circle cx="1645" cy="388" r="70" stroke-width="1" opacity="0.16"/>
+    <circle cx="1645" cy="388" r="26" stroke-width="1.4">
+      <animate attributeName="r" values="26;96" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1645" cy="388" r="26" stroke-width="1.4">
+      <animate attributeName="r" values="26;96" dur="5s" begin="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0" dur="5s" begin="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <circle cx="1645" cy="388" r="8" fill="#c9a227"/>
+  <circle cx="1645" cy="388" r="3.2" fill="#fdfaf2"/>
+
+  <!-- compass rose -->
+  <g transform="translate(2160,150)" stroke="#1d3557" fill="none" opacity="0.4">
+    <circle r="54" stroke-width="1.3"/>
+    <circle r="42" stroke-width="0.8" opacity="0.6"/>
+    <path d="M0 -66 V-46 M0 66 V46 M-66 0 H-46 M66 0 H46" stroke-width="1.3"/>
+    <path d="M0 -38 L9 0 L0 38 L-9 0 Z" fill="#1d3557" stroke="none" opacity="0.55"/>
+    <path d="M-38 0 L0 -7 L38 0 L0 7 Z" fill="#0b7285" stroke="none" opacity="0.45"/>
+  </g>
+  <circle cx="2160" cy="150" r="4" fill="#c9a227"/>
+</svg>

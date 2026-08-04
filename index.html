@@ -450,6 +450,7 @@
     <h2><span class="kicker"><span class="lang-pt">Na mídia</span><span class="lang-en">In the news</span></span>
         <span class="lang-pt">Notícias</span><span class="lang-en">News</span></h2>
     <ul class="pub-list">
+      <li><span class="py">jul 2026 ·</span> <a href="https://www.estadao.com.br/internacional/plano-de-trump-de-cobrar-pedagio-para-proteger-ormuz-viola-convencao-da-onu-e-tradicao-juridica/" target="_blank" rel="noopener">Plano de Trump de cobrar pedágio para proteger Ormuz viola Convenção da ONU e tradição jurídica</a> <span class="pv">Estadão</span></li>
       <li><span class="py">jul 2026 ·</span> <a href="https://www.encontrarecife.com.br/sobre/medalha-de-merito-olegaria-mariano-e-entregue-a-ingrid-zanella/" target="_blank" rel="noopener">Medalha de Mérito Olegária Mariano é entregue a Ingrid Zanella</a> <span class="pv">Encontra Recife</span></li>
       <li><span class="py">jul 2026 ·</span> <a href="https://www.oabpe.org.br/noticias/oab-pe-promove-audiencia-sobre-o-fim-da-escala-de-trabalho-6x1" target="_blank" rel="noopener">OAB-PE promove audiência sobre o fim da escala de trabalho 6x1</a> <span class="pv">OAB-PE</span></li>
       <li><span class="py">jul 2026 ·</span> <a href="https://www.oabpe.org.br/noticias/presidente-ingrid-zanella-e-membros-da-oab-pe-recebem-votos-de-aplausos" target="_blank" rel="noopener">Presidente Ingrid Zanella e membros da OAB-PE recebem Votos de Aplausos</a> <span class="pv">OAB-PE · Câmara do Recife</span></li>
@@ -537,6 +538,9 @@
     btn.textContent=en?'PT':'EN';
   }
   btn.addEventListener('click',()=>setLang(!document.body.classList.contains('en')));
+
+  // Domain default: ingridzanella.com boots in English; .com.br and everything else in Portuguese.
+  if(/(^|\.)ingridzanella\.com$/.test(location.hostname)) setLang(true);
 
   const menuBtn=document.getElementById('menuBtn'),navList=document.getElementById('navList');
   menuBtn.addEventListener('click',()=>navList.classList.toggle('open'));

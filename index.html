@@ -276,7 +276,7 @@
         <li><button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button></li>
       </ul>
     </nav>
-    <button class="menu-toggle" id="menuBtn" aria-label="Menu">☰</button>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navList">☰</button>
   </div>
 </header>
 
@@ -543,8 +543,19 @@
   if(/(^|\.)ingridzanella\.com$/.test(location.hostname)) setLang(true);
 
   const menuBtn=document.getElementById('menuBtn'),navList=document.getElementById('navList');
-  menuBtn.addEventListener('click',()=>navList.classList.toggle('open'));
-  navList.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navList.classList.remove('open')));
+  const closeMenu=()=>{navList.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')};
+  menuBtn.addEventListener('click',e=>{
+    e.stopPropagation();
+    menuBtn.setAttribute('aria-expanded',navList.classList.toggle('open')?'true':'false');
+  });
+  // Fecha ao usar qualquer item, inclusive o seletor de idioma (que e um <button>).
+  navList.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',closeMenu));
+  // Fecha ao clicar fora, com Escape, ou ao voltar para a largura de desktop.
+  document.addEventListener('click',e=>{
+    if(navList.classList.contains('open')&&!navList.contains(e.target)&&!menuBtn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  window.addEventListener('resize',()=>{if(innerWidth>760)closeMenu()});
 
   document.getElementById('yr').textContent=new Date().getFullYear();
 </script>

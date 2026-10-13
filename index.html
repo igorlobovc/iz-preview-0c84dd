@@ -100,10 +100,138 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/source-sans-3-400-lat.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/lora-700-lat.woff2">
 <style>
+  /* fontes servidas pelo próprio site */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('assets/fonts/lora-500-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('assets/fonts/lora-500-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/lora-600-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/lora-600-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/lora-700-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/lora-700-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-400i-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-400i-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-300-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-300-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-400-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-400-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-600-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-600-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-700-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/source-sans-3-700-lat.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
   :root{
     --text:#2d3138;
     --muted:#6b7280;
@@ -153,9 +281,9 @@
     overflow:hidden;
   }
   .banner-art{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
-  .foot-credit{width:100%;font-size:.78rem;opacity:.75;margin-top:2px}
+  .foot-credit{width:100%;font-size:.78rem;color:var(--muted);margin-top:2px}
   .identity{max-width:1000px;margin:0 auto;padding:0 24px;text-align:center}
-  /* avatar: square crop of the podium photo (assets/avatar-podio.jpg).
+  /* avatar: square crop of the podium photo (assets/avatar-podio.webp).
      Sits BELOW the banner with clear space; never overlaps it (client rule). */
   .avatar{
     width:172px;height:172px;border-radius:50%;object-fit:cover;object-position:center;
@@ -220,6 +348,7 @@
   .pub-list .pt-title{font-weight:600}
   .pub-list .pv{color:var(--muted);font-size:.92rem}
   .see-more{margin-top:20px;font-size:.95rem}
+  .see-more a{text-decoration:underline;text-underline-offset:3px}
 
   .aw-list{list-style:none}
   .aw-list li{display:flex;gap:18px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.96rem;align-items:baseline}
@@ -273,18 +402,18 @@
         <li><a href="#noticias"><span class="lang-pt">Notícias</span><span class="lang-en">News</span></a></li>
         <li><a href="#advocacia"><span class="lang-pt">Advocacia</span><span class="lang-en">Practice</span></a></li>
         <li><a href="#contato"><span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a></li>
-        <li><button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button></li>
+        <li><button class="lang-btn" id="langBtn" aria-label="EN, switch to English">EN</button></li>
       </ul>
     </nav>
     <button class="menu-toggle" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navList">☰</button>
   </div>
 </header>
 
-<div class="banner" id="top"><img class="banner-art" src="assets/banner-porto.jpg" alt="Porto I (1953), pintura de Tarsila do Amaral" width="1920" height="1344" fetchpriority="high" onerror="this.remove()"></div>
+<div class="banner" id="top"><img class="banner-art" src="assets/banner-porto-1440.webp" srcset="assets/banner-porto-960.webp 960w, assets/banner-porto-1440.webp 1440w, assets/banner-porto.webp 1920w" sizes="100vw" alt="Porto I (1953), pintura de Tarsila do Amaral" width="1920" height="1344" fetchpriority="high" onerror="this.remove()"></div>
 
 <div class="identity-wrap">
   <div class="identity">
-    <img class="avatar" src="assets/avatar-podio.jpg" alt="Ingrid Zanella" width="788" height="788"
+    <img class="avatar" src="assets/avatar-podio.webp" alt="Ingrid Zanella" width="600" height="600"
          onerror="this.outerHTML='<div class=&quot;avatar-fallback&quot;>IZ</div>'">
     <h1>Ingrid Zanella<span class="cred">, PhD</span></h1>
     <div class="role"><span class="lang-pt">Advogada · Pesquisadora · Professora</span><span class="lang-en">Lawyer · Researcher · Professor</span></div>
@@ -318,7 +447,7 @@
       <p class="lang-en">A former <strong>judge of the Brazilian Maritime Court</strong> (2021-2024), appointed by presidential decree, she is an <strong>arbitrator at the Brazilian Maritime Arbitration Center</strong> and chairs the National Maritime and Port Law Commission of the Brazilian Bar Federal Council. At the helm of <strong>Ingrid Zanella Advocacia Estratégica</strong>, she works on shipping, port and environmental matters, and writes regularly for Brazil's specialized legal press, in outlets such as <strong>Estadão, JOTA, Conjur and Migalhas</strong>.</p>
       </div>
       <figure>
-        <img src="assets/presidente-hd.jpg" alt="Retrato oficial de Ingrid Zanella" loading="lazy" width="800" height="1060">
+        <img src="assets/presidente-hd.webp" alt="Retrato oficial de Ingrid Zanella" loading="lazy" width="800" height="1060">
         <figcaption><span class="lang-pt">Retrato oficial.</span><span class="lang-en">Official portrait.</span></figcaption>
       </figure>
     </div>
@@ -339,16 +468,16 @@
         <p class="lang-en">In teaching, she lectures in <strong>Civil Law</strong> and <strong>Maritime Law</strong> at UFPE and was an invited professor at the <strong>University of Coimbra Faculty of Law</strong>, teaching civil liability for cyber risks in an advanced course. She also teaches in graduate programs across Brazil and supervises master's dissertations.</p>
       </div>
       <figure>
-        <img src="assets/navio.jpg" alt="Ingrid Zanella a bordo de navio, em auditoria" loading="lazy" width="1080" height="1077">
+        <img src="assets/navio.webp" srcset="assets/navio-720.webp 720w, assets/navio.webp 1080w" sizes="(max-width:760px) 92vw, 640px" alt="Ingrid Zanella a bordo de navio, em auditoria" loading="lazy" width="1080" height="1077">
         <figcaption><span class="lang-pt">Experiência de campo: em inspeção a bordo.</span><span class="lang-en">Field experience: on a shipboard inspection.</span></figcaption>
       </figure>
     </div>
 
     <div class="pub-sub"><span class="lang-pt">Livros</span><span class="lang-en">Books</span></div>
     <div class="covers">
-      <img src="assets/capa-temas.png" alt="Capa: Direito Marítimo e Portuário, temas controversos e aspectos polêmicos" loading="lazy" width="322" height="457">
-      <img src="assets/capa-curso.png" alt="Capa: Curso de Direito Marítimo Sistematizado" loading="lazy" width="325" height="457">
-      <img src="assets/capa-constitucional.png" alt="Capa: Direito Constitucional Marítimo" loading="lazy" width="322" height="457">
+      <img src="assets/capa-temas.webp" alt="Capa: Direito Marítimo e Portuário, temas controversos e aspectos polêmicos" loading="lazy" width="322" height="457">
+      <img src="assets/capa-curso.webp" alt="Capa: Curso de Direito Marítimo Sistematizado" loading="lazy" width="325" height="457">
+      <img src="assets/capa-constitucional.webp" alt="Capa: Direito Constitucional Marítimo" loading="lazy" width="322" height="457">
     </div>
     <ul class="pub-list">
       <li><span class="pt-title"><span class="lang-pt">Modernização da Advocacia e do Direito Empresarial</span><span class="lang-en">Modernization of Advocacy and Business Law</span></span><br><span class="pv">Nossa Livraria, 2025 · 341 p.</span></li>
@@ -418,7 +547,7 @@
         <p class="lang-en">She is an <strong>Officer of the Order of Naval Merit</strong> of the Brazilian Navy, a founding member of <strong>WISTA Brazil</strong>, the international association of women in shipping and trade, a full member of the <strong>Ibero-American Institute of Maritime Law</strong> and a member of the <strong>Brazilian Maritime Law Association</strong>.</p>
       </div>
       <figure>
-        <img src="assets/foto-lattes.jpg" alt="Ingrid Zanella diante do mapa de Pernambuco" loading="lazy" width="760" height="675">
+        <img src="assets/foto-lattes.webp" alt="Ingrid Zanella diante do mapa de Pernambuco" loading="lazy" width="760" height="675">
         <figcaption><span class="lang-pt">Presidente da OAB Pernambuco no triênio 2025-2027.</span><span class="lang-en">President of the Pernambuco Bar for the 2025-2027 term.</span></figcaption>
       </figure>
     </div>
@@ -478,16 +607,16 @@
         <p class="lang-en">Engaged in Brazil's relevant <strong>infrastructure</strong> debates, the firm develops complete solutions for projects, supports dispute resolution and connects public and private players, with <strong>Ingrid's direct conduction</strong> of every case.</p>
       </div>
       <figure>
-        <img src="assets/sustentacao.jpg" alt="Ingrid Zanella de beca, no tribunal" loading="lazy" width="1080" height="1077">
+        <img src="assets/sustentacao.webp" srcset="assets/sustentacao-720.webp 720w, assets/sustentacao.webp 1080w" sizes="(max-width:760px) 92vw, 640px" alt="Ingrid Zanella de beca, no tribunal" loading="lazy" width="1080" height="1077">
         <figcaption><span class="lang-pt">No Tribunal: cada caso, conduzido pessoalmente.</span><span class="lang-en">In court: every case, handled personally.</span></figcaption>
       </figure>
     </div>
 
     <div class="pub-sub"><span class="lang-pt">Reconhecimentos</span><span class="lang-en">Recognitions</span></div>
     <div class="selos">
-      <img src="assets/selo-analise-pesquisa-2026.png" alt="Selo Análise Advocacia: advogada indicada na pesquisa 2026" loading="lazy" width="397" height="400">
-      <img src="assets/selo-analise-mulher-2026.png" alt="Selo Análise Advocacia Mulher 2026: advogada mais admirada" loading="lazy" width="238" height="400">
-      <img src="assets/selo-analise-regional-2026.png" alt="Selo Análise Advocacia Regional 2026: advogada mais admirada" loading="lazy" width="280" height="400">
+      <img src="assets/selo-analise-pesquisa-2026.webp" alt="Selo Análise Advocacia: advogada indicada na pesquisa 2026" loading="lazy" width="238" height="240">
+      <img src="assets/selo-analise-mulher-2026.webp" alt="Selo Análise Advocacia Mulher 2026: advogada mais admirada" loading="lazy" width="143" height="240">
+      <img src="assets/selo-analise-regional-2026.webp" alt="Selo Análise Advocacia Regional 2026: advogada mais admirada" loading="lazy" width="168" height="240">
     </div>
 
     <ul class="areas-inline">
@@ -536,6 +665,7 @@
     document.body.classList.toggle('en',en);
     document.documentElement.lang=en?'en':'pt-BR';
     btn.textContent=en?'PT':'EN';
+    btn.setAttribute('aria-label',en?'PT, mudar para português':'EN, switch to English');
   }
   btn.addEventListener('click',()=>setLang(!document.body.classList.contains('en')));
 
